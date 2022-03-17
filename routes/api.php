@@ -17,7 +17,6 @@ Route::prefix('v1')->group(function () {
     Route::post('login', [\App\Http\Controllers\Api\LoginController::class, 'login']);
     Route::post('register', [\App\Http\Controllers\Api\LoginController::class, 'register']);
 
-
     Route::middleware('auth:api')->group(function () {
         Route::prefix('category')->group(function () {
             Route::get('/', [\App\Http\Controllers\Api\CategoryController::class, 'index']);

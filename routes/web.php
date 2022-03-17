@@ -17,4 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('auth/facebook', [\App\Http\Controllers\Api\SocialController::class, 'facebookRedirect'])->name('facebook');
+Route::get('logout', [\App\Http\Controllers\Api\SocialController::class, 'logout']);
+Route::get('auth/facebook/callback', [\App\Http\Controllers\Api\SocialController::class, 'loginWithFacebook'])->name('callback_facebook');
+
 
