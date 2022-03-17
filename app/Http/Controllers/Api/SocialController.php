@@ -22,6 +22,7 @@ class SocialController extends Controller
     public function logout()
     {
         Auth()->logout();
+        return redirect()->url('/');
     }
 
     public function loginWithFacebook()
